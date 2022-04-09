@@ -2,9 +2,8 @@
 
 docker build -t westerly/demo-movie-ratings-service .
 
-docker run -p 9091:9091 westerly/demo-movie-ratings-service
+docker run -p 9092:9092 westerly/demo-movie-ratings-service
 
-docker run -p 9091:9091 westerly/demo-movie-ratings-service
 
 docker images
 

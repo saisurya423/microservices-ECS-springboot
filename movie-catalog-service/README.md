@@ -2,9 +2,7 @@
 
 docker build -t westerly/demo-movie-catalog-service .
 
-docker run -p 9091:9091 westerly/demo-movie-catalog-service
-
-docker run -p 9091:9091 westerly/demo-movie-catalog-service
+docker run -p 9090:9090 westerly/demo-movie-catalog-service
 
 docker images
 
@@ -14,4 +12,4 @@ docker tag westerly/demo-movie-catalog-service westerlytutors/demo-movie-catalog
 
 sudo docker login docker.io -u westerlytutors -p password
 
-sudo docker push westerlytutors/demo-movie-info-service
+sudo docker push westerlytutors/demo-movie-catalog-service
