@@ -11,3 +11,5 @@ docker tag westerly/demo-movie-info-service westerlytutors/demo-movie-info-servi
 docker tag westerly/demo-movie-info-service westerlytutors/demo-movie-info-service:latest
 
 sudo docker login docker.io -u westerlytutors -p password
+
+docker push westerlytutors/demo-movie-info-service
