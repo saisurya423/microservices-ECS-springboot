@@ -19,7 +19,7 @@ public class MovieInfoController {
     @Value("${api.key}")
     private String apiKey;
 
-    @RequestMapping("/{movieId}")
+    @RequestMapping("/movie/{movieId}")
     public Movie getMovieInfo(@PathVariable("movieId") String movieId) {
 
         MovieSummary movieSummary = restTemplate.getForObject(
