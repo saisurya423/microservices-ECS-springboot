@@ -1,10 +1,13 @@
 package com.westerly.movieinfoservice.controllers;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.westerly.movieinfoservice.models.Movie;
 import com.westerly.movieinfoservice.models.MovieSummary;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,5 +30,9 @@ public class MovieInfoController {
 
         return new Movie(movieId, movieSummary.getTitle(), movieSummary.getOverview(), movieId);
 
+    }
+    @GetMapping("/host-info") 
+    public String getHostHeader(HttpServletRequest request){
+        return request.getHeader("host");
     }
 }

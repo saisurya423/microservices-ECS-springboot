@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.westerly.moviecatalogservice.models.CatalogItem;
 import com.westerly.moviecatalogservice.models.Movie;
 import com.westerly.moviecatalogservice.models.UserRating;
@@ -38,5 +40,19 @@ public class MovieCatalogController {
                         "http://"+movieInfoService+"/movie/" + rating.getMovieId(), Movie.class);
                     return new CatalogItem(movie.getName(), movie.getDescription(), rating.getRating());
                 }).collect(Collectors.toList());
-    }  
+    } 
+    @GetMapping("/host-info") 
+    public String getHostHeader(HttpServletRequest request){
+        return request.getHeader("host");
+    }
+    @GetMapping("/info-service-host") 
+    public String getInfoServiceHostHeader(){
+        return restTemplate.getForObject(
+            "http://"+movieInfoService+"/host-info", String.class);
+    }
+    @GetMapping("/ratings-service-host") 
+    public String getRatingsServiceHostHeader(){
+        return restTemplate.getForObject(
+            "http://"+movieRatingsService+"/ratingsdata/host-info", String.class);
+    }
 }

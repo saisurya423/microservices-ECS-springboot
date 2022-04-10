@@ -1,9 +1,12 @@
 package com.westerly.movieratingsservice.controllers;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.westerly.movieratingsservice.models.AllUserRatings;
 import com.westerly.movieratingsservice.models.Rating;
 import com.westerly.movieratingsservice.models.UserRating;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,5 +24,9 @@ public class MovieRatingsController {
         allUserRatings.initData();       
         return allUserRatings.findUserRatingByUserId(userId);
 
+    }
+    @GetMapping("/host-info") 
+    public String getHostHeader(HttpServletRequest request){
+        return request.getHeader("host");
     }
 }
