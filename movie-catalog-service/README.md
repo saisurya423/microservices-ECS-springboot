@@ -4,7 +4,7 @@ export MOVIE_INFO_SERVICE="localhost:9091"
 
 docker build -t westerly/demo-movie-catalog-service .
 
-docker run -p 9090:9090 westerly/demo-movie-catalog-service
+docker run  westerly/demo-movie-catalog-service -e MOVIE_INFO_SERVICE="localhost:9091" -p 9090:9090
 
 docker images
 

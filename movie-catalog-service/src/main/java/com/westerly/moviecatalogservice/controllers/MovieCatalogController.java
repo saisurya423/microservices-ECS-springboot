@@ -19,7 +19,7 @@ public class MovieCatalogController {
     @Value("${MOVIE_INFO_SERVICE}")
     private String movieInforService;
 
-    @GetMapping("/{userId}/")
+    @GetMapping("/{userId}")
     public String home() {
         // Movie movie = restTemplate.getForObject(
         //     "http://"+movieInforService+"/movie/2", Movie.class);
