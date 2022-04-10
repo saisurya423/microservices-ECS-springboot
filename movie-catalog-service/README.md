@@ -1,3 +1,5 @@
+export MOVIE_INFO_SERVICE="localhost:9091"
+
 ./mvnw clean package
 
 docker build -t westerly/demo-movie-catalog-service .
@@ -13,3 +15,5 @@ docker tag westerly/demo-movie-catalog-service westerlytutors/demo-movie-catalog
 sudo docker login docker.io -u westerlytutors -p password
 
 sudo docker push westerlytutors/demo-movie-catalog-service
+
+sudo docker push westerlytutors/demo-movie-catalog-service:1.0
